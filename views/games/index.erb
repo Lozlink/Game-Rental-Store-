@@ -1,0 +1,28 @@
+<h1 class="title">Mark's Gaming Rental Service</h1>
+    <h2 class="slogan">Who Said Rentals were dead?</h2>
+    <a href="/users/new">Sign Up</a>
+    <a href="/sessions/new">Log in</a>
+
+<nav class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="menu">
+    <a href="/games/new">Add to Wishlist</a>
+    <a href="#">My Membership</a>
+    <form action="" method="POST">
+        <a href="/sessions" name="_method" value="delete">Log out</a>
+    </form>
+    </div>
+ 
+</nav>
+
+
+<section class="games">
+    <% games.each do |game|%>
+        <section class="game">
+            <header>
+            <h3><%= game['name'] %></h3>
+            </header>
+    <% end %>
+        </section>
+</section>
+

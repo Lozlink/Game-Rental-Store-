@@ -1,9 +1,19 @@
-     
+require 'dotenv/load'
 require 'sinatra'
+require 'bcrypt'
+require './db/db'
+require 'httparty'
 
-get '/' do
-  erb :index
-end
+enable :sessions
+
+require './models/games'
+require './models/users'
+
+require './controllers/games_controller'
+require './controllers/users_controller'
+require './controllers/sessions_controller'
+
+
 
 
 

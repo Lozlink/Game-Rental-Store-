@@ -13,7 +13,7 @@ A web app designed on Ruby utilizing Sinatra framework, among other resources th
 ## :pencil2: Planning & Problem Solving
 
 - Flow charts of app logic.
-![Wireframing](image.png)
+![Planning Flow Chart](image.png)
 
 ## :rocket: Cool tech
 - Ruby!
