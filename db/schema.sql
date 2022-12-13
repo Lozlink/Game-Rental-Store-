@@ -23,9 +23,8 @@ CREATE TABLE users(
 CREATE TABLE wishlist(
     id SERIAL PRIMARY KEY,
     user_id INTEGER ,
-
-
-)
+    game_id INTEGER
+);
 
 
 

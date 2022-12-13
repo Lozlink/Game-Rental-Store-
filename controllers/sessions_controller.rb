@@ -15,7 +15,13 @@ post '/sessions' do
     end
 end
 
-delete '/sessions' do
+
+
+get '/sessions/logout' do
+    erb :'sessions/logout'
+end
+
+  delete '/sessions' do
     session['user_id'] = nil
 
     redirect '/'

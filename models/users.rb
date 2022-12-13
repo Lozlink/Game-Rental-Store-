@@ -16,6 +16,7 @@ def find_user_by_email(email)
 end
 
 def find_user_by_id(id)
-    run_sql('SELECT * FROM users WHERE id = $1', id)[0]
+    run_sql('SELECT * FROM users WHERE id = $1', [id])[0]
 end
+
 

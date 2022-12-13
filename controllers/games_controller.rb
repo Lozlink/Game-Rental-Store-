@@ -1,9 +1,16 @@
 get '/' do
-    games = games()
+    if !logged_in? 
+        games = rand_game()
 
-    erb :'games/index', locals: {
-        games: games
-    }
+        erb :'games/index', locals: {
+            games: games
+        }
+    else
+        games = games()
+        erb :'games/index', locals: {
+            games: games
+        }
+    end
 end
 
 get '/games/new' do
@@ -36,4 +43,4 @@ post '/games/:id/wishlist' do
 
     run_sql('INSERT INTO wishlist(user_id, game_id) VALUES($1, $2)', [user_id, game_id])
     redirect '/'
-  end
+end

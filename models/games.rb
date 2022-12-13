@@ -1,5 +1,9 @@
+def rand_game
+    run_sql('SELECT * FROM games ORDER BY RANDOM () LIMIT 1') 
+end
+
 def games
-    run_sql('SELECT * FROM games ORDER by id')
+    run_sql('SELECT * FROM games LIMIT 3')
 end
 
 def add_game(name, year_released)
@@ -9,4 +13,3 @@ end
 def get_last_game
     run_sql('SELECT * FROM games ORDER BY id DESC LIMIT 1')
 end
-    

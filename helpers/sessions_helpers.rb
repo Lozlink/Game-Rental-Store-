@@ -1,4 +1,4 @@
-def logged in? 
+def logged_in? 
     if session['user_id']
         return true
     else
@@ -7,7 +7,7 @@ def logged in?
 end
 
 def current_user
-    if logged?
+    if logged_in?
         find_user_by_id(session['user_id'])
     else
         nil
