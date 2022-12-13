@@ -1,0 +1,11 @@
+
+<h1>Add to Wishlist?</h1>
+<section>
+<% get_last_game.each do |game|%>
+    <h3><%= game['name'] %></h3>
+    <form action="/games/<%= game['id'] %>/wishlist" method="POST">
+        <button>Add</button>
+    </form>
+
+    <% end %>
+</section>
