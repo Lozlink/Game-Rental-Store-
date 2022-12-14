@@ -10,7 +10,16 @@ post '/users' do
 
     create_user(first_name, last_name, email, password)
 
-    redirect '/'
+    redirect '/sessions/new'
     
 end
+
+# get '/users/:id' do
+#     user_id = session['user_id']
+    
+    
+#     run_sql('SELECT users.first_name, wishlist.game_id, games.name FROM ((users JOIN wishlist ON users.id = wishlist.user_id) JOIN games ON games.id = wishlist.game_id) WHERE VALUES($1) = user[id]' [user_id])      
+#     erb :'/users/account'
+# end
+
 

@@ -1,0 +1,16 @@
+<h1>Edit Game Entry</h1>
+
+<form action="/games/<%= game['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <p>
+    <label for="">Name: </label>
+    <input type="text" name="name" value="<%=game['name'] %>">
+    </p>
+
+    <p>
+    <label for="">Year Released: </label>
+    <input type="text" name="year_released" value="<%= game['year_released'] %>">
+
+    <button>Update Game Entry</button>
+
+</form>
