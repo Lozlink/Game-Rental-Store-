@@ -26,6 +26,12 @@ CREATE TABLE wishlist(
     game_id INTEGER
 );
 
+ALTER TABLE games 
+ADD COLUMN image_url TEXT, 
+ADD COLUMN genre TEXT,
+ADD COLUMN developer TEXT,
+ADD COLUMN platforms TEXT,
+ADD COLUMN description TEXT;
 
 
 

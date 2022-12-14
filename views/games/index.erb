@@ -9,29 +9,30 @@
         <button class="dropbtn">Menu</button>
         <div class="menu">
             <a href="/games/new">Add to database</a>
-            <a href="/users/:id">My Membership</a>
+            <a href="/users/:id">My Account</a>
             <a href="/sessions/logout" method="POST" value="delete">Log out</a>
         </div>
     </nav>
         <h3>Welcome to Mark's Gaming Service <%= current_user['first_name'] %></h3>
         <section class="games">
-            <% games.each do |game|%>
-                <section class="game">
-                    <header>
-                        <h2><%= game['name'] %></h2>
-                    <section class="controls">
-                        <a href="/games/<%= game['id'] %>/edit">Edit</a>
-                        <form action="/games/<%= game['id'] %>" method="POST">
-                            <input type="hidden" name="_method" value="delete">
-                            <button>Delete</button>
-                        </form>
-                    </section>
-                    </header>
-                    <img src="<%= game['image_url'] %>" alt="">
-                    <a href="/game_details">Click here for more details</a>
-            <% end %>
+        <% games.each do |game|%>
+            <section class="game">
+                <header>
+                    <h2><%= game['name'] %></h2>
+
+                <section class="controls">
+                    <a href="/games/<%= game['id'] %>/edit">Edit</a>
+                    <form action="/games/<%= game['id'] %>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <button>Delete</button>
+                    </form>
                 </section>
-        </section>
+                </header>
+                <img src="<%= game['image_url'] %>" alt="">
+                <a href="/games/<%= game['id'] %>/game_details">Click here for more details</a>
+            </section>
+        <% end %>
+    </section>
     <% else %>
     <a href="/users/new">Sign Up</a>
     <a href="/sessions/new">Log in</a>

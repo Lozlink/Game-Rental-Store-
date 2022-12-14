@@ -29,9 +29,11 @@ post '/games' do
     description = params['description']    
 
     add_game(name, year_released, image_url, genre, developer, platforms, description)
-
+    if logged_in?
     redirect '/wishlist'
-
+    else 
+    redirect '/'
+    end
 end
 
 get '/wishlist' do
@@ -82,8 +84,9 @@ delete '/games/:id' do
     redirect '/'
 end
 
-get '/game_details' do
-    games = games()
+get '/games/:id/game_details' do
+    id = params['id']
+    games = get_game(id)
 
     erb :'games/game_details', locals: {
         games: games

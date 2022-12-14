@@ -3,7 +3,7 @@ def rand_game
 end
 
 def games
-    run_sql('SELECT * FROM games LIMIT 3')
+    run_sql('SELECT * FROM games LIMIT 8')
 end
 
 def add_game(name, year_released, image_url, genre, developer, platforms, description)
