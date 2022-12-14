@@ -2,3 +2,13 @@
 
 <h3 class="items_on_wishlist">Items on your wishlist</h3>
 
+<section class="games">
+            <% wishlist_games.each do |game|%>
+                <section class="game">
+                <header>
+                    <h3><%= game['name'] %></h3>
+                </header>
+                <% end %>
+                </section>
+</section>
+

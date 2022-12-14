@@ -1,28 +1,33 @@
 <h1 class="title">Mark's Gaming Rental Service</h1>
     <h2 class="slogan">Who Said Rentals were dead?</h2>
 
-<nav class="dropdown">
-    <button class="dropbtn">Menu</button>
-    <div class="menu">
-        <a href="/games/new">Add to database</a>
-        <a href="/users/:id">My Membership</a>
-        <a href="/sessions/logout" method="POST" value="delete">Log out</a>
-    </div>
-</nav>
+
     
     
     <% if logged_in?%>
+    <nav class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="menu">
+            <a href="/games/new">Add to database</a>
+            <a href="/users/:id">My Membership</a>
+            <a href="/sessions/logout" method="POST" value="delete">Log out</a>
+        </div>
+    </nav>
         <h3>Welcome to Mark's Gaming Service <%= current_user['first_name'] %></h3>
         <section class="games">
             <% games.each do |game|%>
                 <section class="game">
                     <header>
                         <h2><%= game['name'] %></h2>
+                        <section class="controls">
                     <a href="/games/<%= game['id'] %>/edit">Edit</a>
                     <form action="/games/<%= game['id'] %>" method="POST">
                     <input type="hidden" name="_method" value="delete">
                     <button>Delete</button>
                     </form>
+                    </section>
+                </header>
+                <img src="<%= game['image_url'] %>" alt="">
             <% end %>
                 </section>
         </section>
@@ -30,13 +35,14 @@
     <a href="/users/new">Sign Up</a>
     <a href="/sessions/new">Log in</a>
         <section class="games">
-            <% games.each do |game|%>
+            <% rand_games.each do |game|%>
                 <section class="game">
                 <header>
                     <h3><%= game['name'] %></h3>
                 </header>
+                <img src="<%= game['image_url'] %>" alt="">
                 <% end %>
                 </section>
-            </section>
+        </section>
     <% end %>
 

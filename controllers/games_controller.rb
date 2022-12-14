@@ -1,9 +1,9 @@
 get '/' do
     if !logged_in? 
-        games = rand_game()
+        rand_games = rand_game()
 
         erb :'games/index', locals: {
-            games: games
+           rand_games: rand_games
         }
     else
         games = games()
@@ -22,8 +22,13 @@ end
 post '/games' do
     name = params['name']
     year_released = params['year_released']
-    
-    add_game(name, year_released)
+    image_url = params['image_url']
+    genre = params['genre']
+    developer = params['developer']
+    platforms = params['platforms']
+    description = params['description']    
+
+    add_game(name, year_released, image_url, genre, developer, platforms, description)
 
     redirect '/wishlist'
 
@@ -58,8 +63,13 @@ put '/games/:id' do
     id = params['id']
     name = params['name']
     year_released = params[year_released]
+    image_url = params['image_url']
+    genre = params['genre']
+    developer = params['developer']
+    platforms = params['platforms']
+    description = params['description']   
 
-    edit_game(id, name, year_released)
+    edit_game(name, year_released, image_url, genre, developer, platforms, description)
 
     redirect '/'
 end

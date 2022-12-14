@@ -14,12 +14,14 @@ post '/users' do
     
 end
 
-# get '/users/:id' do
-#     user_id = session['user_id']
+get '/users/:id' do
+    user_id = session['user_id']
     
-    
-#     run_sql('SELECT users.first_name, wishlist.game_id, games.name FROM ((users JOIN wishlist ON users.id = wishlist.user_id) JOIN games ON games.id = wishlist.game_id) WHERE VALUES($1) = user[id]' [user_id])      
-#     erb :'/users/account'
-# end
+    wishlist_games = games_on_wishlist(user_id)
+
+    erb :'/users/account', locals: {
+        wishlist_games: wishlist_games
+    }
+end
 
 
