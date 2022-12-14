@@ -1,4 +1,4 @@
-require 'dotenv/load'
+
 require 'sinatra'
 require 'bcrypt'
 require './db/db'

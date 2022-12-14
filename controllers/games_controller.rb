@@ -92,3 +92,12 @@ get '/games/:id/game_details' do
         games: games
     }
 end
+
+get '/users/:id/wishlist' do
+    id = params['id']
+    game = get_game(id)
+
+    erb :'games/edit_game', locals: {
+        game: game
+    }
+end

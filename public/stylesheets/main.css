@@ -1,5 +1,13 @@
 * {
     box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    
 }
 
 .title {
@@ -83,7 +91,7 @@ a, button {
 }
 
 .game header {
-    background-color: red;
+    background-color: lightskyblue;
 }
 
 .game h2 {
@@ -95,4 +103,16 @@ a, button {
 .controls {
     display: flex;
     gap: 0.5rem;
+}
+
+.game {
+    background-color: lightskyblue;
+}
+
+div {
+    max-width: 600px;
+}
+
+div img {
+    max-width: 600px;
 }
