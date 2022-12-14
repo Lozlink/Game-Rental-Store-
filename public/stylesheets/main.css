@@ -111,8 +111,13 @@ a, button {
 
 div {
     max-width: 600px;
+    border: 1px solid purple;
 }
 
 div img {
+    max-width: 600px;
+}
+
+.wlgames {
     max-width: 600px;
 }

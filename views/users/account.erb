@@ -1,8 +1,8 @@
 <h1 class="account">Your account</h1>
 
 <h3 class="items_on_wishlist">Items on your wishlist</h3>
-<p></p>
-<section class="games">
+
+<section class="wlgames">
             <% wishlist_games.each do |game|%>
                 <section class="wlgame">
                 <header>
@@ -12,9 +12,9 @@
                 <% end %>
                 </section>
 </section>
-</p>
+
 <section class="user_details">
-<p>
+
         <h1>Edit Your Details:</h1>
     <form action="/users/<%= current_user['id'] %>" method="POST">
         <input type="hidden" name="_method" value="put">
@@ -36,7 +36,7 @@
         <button>Update details!</button> 
     </form>
 </section>
-</p>
+
 <footer>
 <a href="/">Go back to home page</a>
 </footer>

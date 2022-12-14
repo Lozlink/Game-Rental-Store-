@@ -71,7 +71,7 @@ put '/games/:id' do
     platforms = params['platforms']
     description = params['description']   
 
-    edit_game(name, year_released, image_url, genre, developer, platforms, description)
+    edit_game(id, name, year_released, image_url, genre, developer, platforms, description)
 
     redirect '/'
 end
@@ -93,11 +93,3 @@ get '/games/:id/game_details' do
     }
 end
 
-get '/users/:id/wishlist' do
-    id = params['id']
-    game = get_game(id)
-
-    erb :'games/edit_game', locals: {
-        game: game
-    }
-end

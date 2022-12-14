@@ -26,5 +26,31 @@ get '/users/:id' do
     
 end
 
+put '/users/:id' do
+    id = params['id']
+    first_name = params['first_name']
+    last_name = params['last_name']
+    email = params['email']
 
+    edit_user(id, first_name, last_name, email)
+
+    redirect '/users/:id'
+end
+
+
+# get '/users/:id/wishlist' do
+#     id = params['id']
+#     game = get_game(id)
+
+#     erb :'games/edit_game', locals: {
+#         game: game
+#     }
+# endget '/users/:id/wishlist' do
+#     id = params['id']
+#     game = get_game(id)
+
+#     erb :'games/edit_game', locals: {
+#         game: game
+#     }
+# end
 
