@@ -81,3 +81,11 @@ delete '/games/:id' do
 
     redirect '/'
 end
+
+get '/game_details' do
+    games = games()
+
+    erb :'games/game_details', locals: {
+        games: games
+    }
+end

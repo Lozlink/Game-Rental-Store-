@@ -19,9 +19,12 @@ get '/users/:id' do
     
     wishlist_games = games_on_wishlist(user_id)
 
+
     erb :'/users/account', locals: {
         wishlist_games: wishlist_games
     }
+    
 end
+
 
 
