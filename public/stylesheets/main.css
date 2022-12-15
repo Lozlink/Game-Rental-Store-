@@ -175,6 +175,17 @@ article {
 
 .copy {
     position: fixed;
-    bottom: 5%;
+    bottom: 2%;
 }
 
+.ad {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  
+}
+
+.rr {
+    text-align: right;
+}
