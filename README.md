@@ -1,14 +1,10 @@
 # Game-Rental-Store-
-A web app designed on Ruby utilizing Sinatra framework, among other resources that acts as a Game Rental store. 
+A web app designed on Ruby utilizing Sinatra framework, among other resources that acts as a games database. 
 
 ## :video_game: [Click here](https://game-center.fly.dev/) to see my live project!
 
 ## :page_facing_up: About
-- A video game rental store! Find your favourite video game and rent it out!
-- You can check the status of your rentals as well!
-
-```
-- Add in-app screenshots.
+- A video game database with the ability to add, edit and delete games if you're a user. Also, the ability to add games to your wishlist to keep track of. 
 
 ## :pencil2: Planning & Problem Solving
 - Flow charts of app logic.
@@ -20,7 +16,6 @@ A web app designed on Ruby utilizing Sinatra framework, among other resources th
 - Sinatra Framework
 - Multiple Gems in use (PG, Puma, BCrypt, HTTParty)
 - Postgresql
--
 
 ## :scream: Bugs to fix :poop:
 - Unique constraints handling
