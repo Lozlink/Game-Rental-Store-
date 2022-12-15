@@ -1,4 +1,4 @@
-<h1><%= games['name'] %> Details</h1>
+<h1><%= games['name'] %> Details </h1>
 
 
 <div>
@@ -7,12 +7,17 @@
     <h3>Genre: <%= games['genre'] %></h3>
     <h3>Developer: <%= games['developer'] %></h3>
     <h3>Platforms: <%= games['platforms'] %></h3>
-    <h3>Description <%= games['description'] %></h3>
+    <h3>Description: <%= games['description'] %></h3>
     
 </div>
-<a href="/users/:id/wishlist">Add to wishlist?</a>
+<form action="/games/<%= games['id'] %>/wishlist" method="POST">
+        <button>Add to Wishlist</button>
+    </form>
 <a href="/">Return to home page</a>
-
-
-
-
+<section class="controls">
+                    <a href="/games/<%= games['id'] %>/edit">Edit</a>
+                    <form action="/games/<%= games['id'] %>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <button>Delete</button>
+                    </form>
+</section>

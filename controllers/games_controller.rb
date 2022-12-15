@@ -18,7 +18,6 @@ get '/games/new' do
 end
 
 
-
 post '/games' do
     name = params['name']
     year_released = params['year_released']
@@ -48,9 +47,11 @@ post '/games/:id/wishlist' do
     game_id = params['id']
     user_id = session['user_id']
 
+    
     run_sql('INSERT INTO wishlist(user_id, game_id) VALUES($1, $2)', [user_id, game_id])
     redirect '/'
 end
+
 
 get '/games/:id/edit' do
     id = params['id']
@@ -93,3 +94,11 @@ get '/games/:id/game_details' do
     }
 end
 
+get '/games/all' do
+
+    games = all_games()
+
+    erb :'games/all', locals: {
+        games: games
+    }
+end

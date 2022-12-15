@@ -34,6 +34,9 @@ CREATE TABLE wishlist(
     game_id INTEGER
 );
 
+ALTER TABLE wishlist
+ADD CONSTRAINT unique_wishlist_addition
+UNIQUE(user_id, game_id);
 
 
 

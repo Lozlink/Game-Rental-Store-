@@ -38,19 +38,3 @@ put '/users/:id' do
 end
 
 
-# get '/users/:id/wishlist' do
-#     id = params['id']
-#     game = get_game(id)
-
-#     erb :'games/edit_game', locals: {
-#         game: game
-#     }
-# endget '/users/:id/wishlist' do
-#     id = params['id']
-#     game = get_game(id)
-
-#     erb :'games/edit_game', locals: {
-#         game: game
-#     }
-# end
-

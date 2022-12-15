@@ -8,8 +8,9 @@
     <nav class="dropdown">
         <button class="dropbtn">Menu</button>
         <div class="menu">
+            <a href="/games/all">All games</a>
             <a href="/games/new">Add to database</a>
-            <a href="/users/:id">My Account</a>
+            <a href="/users/:id">My account</a>
             <a href="/sessions/logout" method="POST" value="delete">Log out</a>
         </div>
     </nav>
@@ -33,18 +34,36 @@
             </section>
         <% end %>
     </section>
+
+    <article>
+        <h2>Gaming News</h2>
+        <ul>
+            <li><h2><a href="https://www.youtube.com/watch?v=kKO1s-CUZvY">Armored Core VI announced at The Games Awards</a></h2></li>
+            
+            <li><h2><a href="https://www.youtube.com/watch?v=Xr1ZnsYu1wU">Final Fantasy 16 releases new trailer</a></h2></li>
+            
+            <li><h2><a href="https://www.gamesindustry.biz/ftc-files-lawsuit-to-block-microsofts-activision-blizzard-acquisition">FTC files lawsuit to block Microsft acquistion of Activision Blizzard</a></h2></li>
+        </ul>
+    
+    
+    </article>
     <% else %>
     <a href="/users/new">Sign Up</a>
     <a href="/sessions/new">Log in</a>
+    <h1>A sample of our Popular games</h1>
         <section class="games">
+
             <% rand_games.each do |game|%>
                 <section class="game">
                 <header>
                     <h3><%= game['name'] %></h3>
                 </header>
                 <img src="<%= game['image_url'] %>" alt="">
-                <% end %>
+                
                 </section>
+        <% end %>
         </section>
+        <h1>Log in for gaming news!</h1>
     <% end %>
+
 

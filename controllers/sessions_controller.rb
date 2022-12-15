@@ -21,7 +21,7 @@ get '/sessions/logout' do
     erb :'sessions/logout'
 end
 
-  delete '/sessions' do
+delete '/sessions' do
     session['user_id'] = nil
 
     redirect '/'

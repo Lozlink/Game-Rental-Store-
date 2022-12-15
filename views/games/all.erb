@@ -1,0 +1,24 @@
+<h1>All Games</h1>
+        <section class="games">
+        <% games.each do |game|%>
+            <section class="game">
+                <header>
+                    <h2><%= game['name'] %></h2>
+
+                <section class="controls">
+                    <a href="/games/<%= game['id'] %>/edit">Edit</a>
+                    <form action="/games/<%= game['id'] %>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <button>Delete</button>
+                    </form>
+                </section>
+                </header>
+                <img src="<%= game['image_url'] %>" alt="">
+                <a href="/games/<%= game['id'] %>/game_details">Click here for more details</a>
+            </section>
+        <% end %>
+    </section>
+
+<footer>
+<a href="/">Go back to home page</a>
+</footer>
