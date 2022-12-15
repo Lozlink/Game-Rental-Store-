@@ -89,6 +89,7 @@ a, button {
     font-size: 0.75rem;
     text-decoration: none;
     cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .game header {
@@ -149,4 +150,8 @@ aside {
 article {
     max-width: 600px;
     margin: 0;
+}
+
+.add {
+    margin-top: 20px;
 }

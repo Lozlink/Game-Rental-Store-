@@ -1,18 +1,22 @@
-<h1 class="account">Your account</h1>
+<body class="account">
+    
+    <h1 class="account">Your account</h1>
 
-<h3 class="items_on_wishlist">Items on your wishlist</h3>
+    <h3 class="items_on_wishlist">Items on your wishlist</h3>
 
-<section class="wlgames">
+    <section class="wlgames">
             <% wishlist_games.each do |game|%>
                 <section class="wlgame">
                 <header>
                     <h3><%= game['name'] %></h3>
                 </header>
                     <a href="/games/<%= game['id'] %>/game_details">Click here for more details</a>
-            <% end %>
-                </section>
-</section>
+            
+            </section>
+        <% end %>
+    </section>
 
+<a class="add" href="/games/all">Click here to add more!</a>
 <section class="user_details">
 
         <h1>Edit Your Details:</h1>
@@ -40,4 +44,4 @@
 <footer>
 <a href="/">Go back to home page</a>
 </footer>
-
+</body>

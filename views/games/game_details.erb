@@ -10,14 +10,14 @@
     <h3>Description: <%= games['description'] %></h3>
     
 </div>
-<form action="/games/<%= games['id'] %>/wishlist" method="POST">
+<section class="controls">
+    <form action="/games/<%= games['id'] %>/wishlist" method="POST">
         <button>Add to Wishlist</button>
     </form>
-<a href="/">Return to home page</a>
-<section class="controls">
-                    <a href="/games/<%= games['id'] %>/edit">Edit</a>
-                    <form action="/games/<%= games['id'] %>" method="POST">
-                        <input type="hidden" name="_method" value="delete">
-                        <button>Delete</button>
-                    </form>
+    <a href="/">Return to home page</a>
+    <a href="/games/<%= games['id'] %>/edit">Edit</a>
+    <form action="/games/<%= games['id'] %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+            <button>Delete</button>
+        </form>
 </section>
