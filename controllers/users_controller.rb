@@ -10,8 +10,7 @@ post '/users' do
 
     create_user(first_name, last_name, email, password)
 
-    redirect '/sessions/new'
-    
+    redirect '/sessions/new' 
 end
 
 get '/users/:id' do
@@ -19,11 +18,9 @@ get '/users/:id' do
     
     wishlist_games = games_on_wishlist(user_id)
 
-
     erb :'/users/account', locals: {
         wishlist_games: wishlist_games
-    }
-    
+    }   
 end
 
 put '/users/:id' do
@@ -36,5 +33,3 @@ put '/users/:id' do
 
     redirect '/users/:id'
 end
-
-

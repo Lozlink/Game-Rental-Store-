@@ -31,7 +31,7 @@ def games_on_wishlist(user_id)
 end
 
 def all_games
-    run_sql('SELECT * FROM games ')
+    run_sql('SELECT * FROM games')
 end
     
 

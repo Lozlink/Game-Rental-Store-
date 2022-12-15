@@ -22,4 +22,3 @@ end
 def edit_user(id,first_name, last_name, email)
     run_sql('UPDATE users set first_name = $2, last_name = $3, email = $4 WHERE id = $1', [id,first_name, last_name, email])
 end
-

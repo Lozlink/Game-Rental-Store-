@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
     
+    
 }
 
 body {
-    background-color: black;
+    background-color: #3b3a3b;
     color: white;
     font-family: 'Orbitron', sans-serif;
     margin-left: 50px;
@@ -13,14 +14,16 @@ body {
 
 .title {
     text-align: center;
+    background-color: #557A95
 }
 
 .slogan {
     text-align: center;
+    background-color: #B1A296;
 }
 
 .dropbtn {
-    background-color: goldenrod;
+    background-color: lightskyblue;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -84,7 +87,7 @@ a, button {
     border-radius: 5px;
     border: 1px solid black;
     padding: 5px 5px 0 5px;
-    background-color: orangered;
+    background-color: #8bb647;
     color: black;
     font-size: 0.75rem;
     text-decoration: none;
@@ -109,13 +112,13 @@ a, button {
 
 .game {
     background-color: lightskyblue;
-    border: 1px solid orangered;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
-div {
+.details {
     max-width: 600px;
-    border: 1px solid purple;
+    border: 1px solid rgb(214, 115, 214);
 }
 
 div img {
@@ -131,7 +134,7 @@ ul {
 }
 
 article a { 
-    background-color: purple;
+    background-color: #8bb647;
 }
 
 footer {
@@ -155,3 +158,16 @@ article {
 .add {
     margin-top: 20px;
 }
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    max-width: none;
+    margin-right: 100px;
+}
+
+.greeting {
+    display: flex;
+    justify-content: left;
+    max-width: 600px;
+}   
