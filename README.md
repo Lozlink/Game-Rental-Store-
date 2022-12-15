@@ -1,4 +1,4 @@
-# Game-Rental-Store-
+# Game-Center-
 A web app designed on Ruby utilizing Sinatra framework, among other resources that acts as a games database. 
 
 ## :video_game: [Click here](https://game-center.fly.dev/) to see my live project!
