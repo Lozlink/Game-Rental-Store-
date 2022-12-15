@@ -14,6 +14,9 @@ post '/users' do
 end
 
 get '/users/:id' do
+    if !logged_in?
+        redirect '/'
+    end
     user_id = session['user_id']
     
     wishlist_games = games_on_wishlist(user_id)
@@ -24,6 +27,10 @@ get '/users/:id' do
 end
 
 put '/users/:id' do
+    if !logged_in?
+        redirect '/'
+    end
+
     id = params['id']
     first_name = params['first_name']
     last_name = params['last_name']

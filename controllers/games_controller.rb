@@ -14,11 +14,19 @@ get '/' do
 end
 
 get '/games/new' do
+    if !logged_in?
+        redirect '/'
+    end
+
     erb :'games/new'
 end
 
 
 post '/games' do
+    if !logged_in?
+        redirect '/'
+    end
+
     name = params['name']
     year_released = params['year_released']
     image_url = params['image_url']
@@ -36,6 +44,9 @@ post '/games' do
 end
 
 get '/wishlist' do
+    if !logged_in?
+        redirect '/'
+    end
 
     get_last_game = get_last_game()
     erb :'/users/wishlist', locals: {
@@ -44,6 +55,10 @@ get '/wishlist' do
 end
 
 post '/games/:id/wishlist' do
+    if !logged_in?
+        redirect '/'
+    end
+
     game_id = params['id']
     user_id = session['user_id']
 
@@ -54,6 +69,10 @@ end
 
 
 get '/games/:id/edit' do
+    if !logged_in?
+        redirect '/'
+    end
+
     id = params['id']
     game = get_game(id)
 
@@ -63,6 +82,10 @@ get '/games/:id/edit' do
 end
 
 put '/games/:id' do
+    if !logged_in?
+        redirect '/'
+    end
+
     id = params['id']
     name = params['name']
     year_released = params[year_released]
@@ -78,6 +101,10 @@ put '/games/:id' do
 end
 
 delete '/games/:id' do
+    if !logged_in?
+        redirect '/'
+    end
+
     id = params['id']
     
     delete_game(id)
@@ -86,6 +113,10 @@ delete '/games/:id' do
 end
 
 get '/games/:id/game_details' do
+    if !logged_in?
+        redirect '/'
+    end
+
     id = params['id']
     games = get_game(id)
 
@@ -95,10 +126,28 @@ get '/games/:id/game_details' do
 end
 
 get '/games/all' do
+    
+    if !logged_in?
+        redirect '/'
+    end
 
     games = all_games()
 
     erb :'games/all', locals: {
         games: games
     }
+end
+
+
+post '/games/:id/delete_from_wishlist' do
+    if !logged_in?
+        redirect '/'
+    end
+
+    game_id = params['id']
+    user_id = session['user_id']
+
+    remove_from_wishlist(user_id, game_id)
+
+    redirect '/users/:id'
 end

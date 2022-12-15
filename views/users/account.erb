@@ -11,12 +11,15 @@
                     <h3><%= game['name'] %></h3>
                 </header>
                     <a href="/games/<%= game['id'] %>/game_details">Click here for more details</a>
-            
+                <form action="/games/<%= game['id'] %>/delete_from_wishlist" method="POST">
+                    <button>Delete from wishlist</button>
+                </form>
+
             </section>
         <% end %>
     </section>
 
-<a class="add" href="/games/all">Click here to add more!</a>
+<div class="add"><a href="/games/all">Click here to add more!</a></div>
 
 <section class="user_details">
 

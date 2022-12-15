@@ -19,7 +19,7 @@ A web app designed on Ruby utilizing Sinatra framework, among other resources th
 
 ## :scream: Bugs to fix :poop:
 - Unique constraints handling
-- Lack of remove from wishlist button
+- Lack of remove from wishlist button (added on 16/12)
 
 ## :sob: Lessons learnt
 What I would do differently if I could wind back the clock...

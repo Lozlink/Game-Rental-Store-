@@ -3,7 +3,7 @@ def rand_game
 end
 
 def games
-    run_sql('SELECT * FROM games LIMIT 8')
+    run_sql('SELECT * FROM games ORDER BY RANDOM () LIMIT 8')
 end
 
 def add_game(name, year_released, image_url, genre, developer, platforms, description)
@@ -37,6 +37,7 @@ end
 def remove_from_wishlist(user_id, game_id)
     run_sql('DELETE from wishlist WHERE user_id = $1 AND game_id = $2', [user_id, game_id]);
 end
+
 
 
 
