@@ -33,7 +33,10 @@ end
 def all_games
     run_sql('SELECT * FROM games')
 end
-    
+
+def remove_from_wishlist(user_id, game_id)
+    run_sql('DELETE from wishlist WHERE user_id = $1 AND game_id = $2', [user_id, game_id]);
+end
 
 
 
