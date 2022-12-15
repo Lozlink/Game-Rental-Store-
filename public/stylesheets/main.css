@@ -140,3 +140,13 @@ footer {
 .user_details {
     margin-top: 50px;
 }
+
+aside {
+    display: flex;
+    justify-content: right;
+}
+
+article {
+    max-width: 600px;
+    margin: 0;
+}
